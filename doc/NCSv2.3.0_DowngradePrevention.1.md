@@ -1,6 +1,6 @@
 <sup>SDK version: NCS v2.3.0 - Link to Hands-on solution: [MCUboot_downgrade_prevention_1](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.3.0/MCUboot_downgrade_prevention_1)</sup>
 
-# MCUboot Hands-on:  Using Software-based Downgrade Protection 
+# MCUboot Hands-on:  Using Software-based Downgrade Prevention 
 
 ## Introduction
 
