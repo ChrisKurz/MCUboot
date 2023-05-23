@@ -12,6 +12,7 @@ In this subchapter we will focus on MCUboot. In these exercises, the firmware up
 ### Basics
 - [Adding MCUboot to a project](doc/NCSv2.3.0_01-AddingMcubootToProject.md)
 - [Generate a Key File](doc/NCSv2.3.0_GenerateKey.md) - A key file is needed when you want to generate your own signature key for an application image, or you would like to encrypt your upgrade image. This exercise describes how to generate a key file.
+- [Create a signed Application Image](doc/NCSv2.3.0_ImageSigning_(ecdsa-p256).md) - using Signature Type _Elliptic curve digital signatures with curve P-256_
 
 ### Confirming an upgrade image
 - [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
