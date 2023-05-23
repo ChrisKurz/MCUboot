@@ -9,9 +9,14 @@ Note that MCUboot does not handle the upgrade image download. This has to be han
 ## MCUboot Hands-on
 In this subchapter we will focus on MCUboot. In these exercises, the firmware upgrade image is loaded via the Programmer tool. This helps to keep the project simple and we can focus only on using the MCUboot features. 
 
-1) [Adding MCUboot to a project](doc/NCSv2.3.0_01-AddingMcubootToProject.md)
-2) [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
-3) [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md) - This method works only in image upgrade mode _Overwrite image updates instead of swapping_!
+### Basics
+- [Adding MCUboot to a project](doc/NCSv2.3.0_01-AddingMcubootToProject.md)
+
+### Confirming an upgrade image
+- [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
+
+### Downgrade Prevention
+- [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md) - This method works only in image upgrade mode _Overwrite image updates instead of swapping_!
 
 
 ## McuMgr Hands-on
