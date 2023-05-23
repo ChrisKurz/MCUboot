@@ -11,7 +11,7 @@ In this subchapter we will focus on MCUboot. In these exercises, the firmware up
 
 1) [Adding MCUboot to a project](doc/NCSv2.3.0_01-AddingMcubootToProject.md)
 2) [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
-3) [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md) - This method works for image upgrade mode _Overwrite image updates instead of swapping_ only!
+3) [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md) - This method works only in image upgrade mode _Overwrite image updates instead of swapping_!
 
 
 ## McuMgr Hands-on
