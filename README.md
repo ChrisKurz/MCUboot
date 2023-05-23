@@ -8,3 +8,4 @@ Each individual hands-on focuses on specific features that are gradually assembl
 
 1) [Adding MCUboot to a project](doc/NCSv2.3.0_01-AddingMcubootToProject.md)
 2) [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
+3) [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md)
