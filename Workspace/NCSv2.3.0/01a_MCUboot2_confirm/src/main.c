@@ -8,6 +8,6 @@
 
 void main(void)
 {
-	printk("Hello World! %s\n", CONFIG_BOARD);
-    printk("Image: MCUboot2 \n"); 	
+    printk("Hello World! %s\n", CONFIG_BOARD);
+    printk("Image: MCUboot2 (confirmed) \n");	
 }
