@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.3.0 - Link to Hands-on solution: [TBD](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.3.0/)</sup>
+<sup>SDK version: NCS v2.3.0 - Link to Hands-on solution: [03_MCUboot_signed](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.3.0/03_MCUboot_signed)</sup>
 
 
 # Create a signed Application Image using Signature Type _Elliptic curve digital signatures with curve P-256_
