@@ -8,7 +8,7 @@ Here we add Device Firmware Image download capability to an application and perf
 
 ## Required Hardware/Software for Hands-on
 - one nRF52 development kit (e.g. [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK))
-- a smartphone is needed with [nRF Connect for Mobile](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-mobile) app ([Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=en&gl=US) or [iOS](https://apps.apple.com/gb/app/nrf-connect-for-mobile/id1054362403))
+- a smartphone is needed with [nRF Connect for Mobile](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-mobile) app ([Android app](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=en&gl=US) or [iOS app](https://apps.apple.com/gb/app/nrf-connect-for-mobile/id1054362403))
 - install the _nRF Connect SDK_ v2.5.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/assistant.html#).
 
 ## Hands-on step-by-step description 
