@@ -1,9 +1,10 @@
 <sup>SDK version: NCS v2.5.0 - Link to Hands-on solution: [original image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_orignial), [upgrade image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_upgrade)</sup>
 
-# MCUboot Hands-on:  Adding MCUboot to a Project
+# McuMgr Hands-on:  Adding SMP Server with Bluetooth Transfer to a Project
 
 ## Introduction
 
+Here we add Device Firmware Image download capability to an application and perform a firmware upgrade via Bluetooth LE. 
 
 ## Required Hardware/Software for Hands-on
 - one nRF52 development kit (e.g. [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK))
