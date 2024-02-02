@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.5.0 - Link to Hands-on solution: [original image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_orignial), [upgrade image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_upgrade)</sup>
+<sup>SDK version: NCS v2.5.0 - Link to Hands-on solution: [original image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_original), [upgrade image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_upgrade)</sup>
 
 # McuMgr Hands-on:  Adding SMP Server with Bluetooth Transfer to a Project
 
