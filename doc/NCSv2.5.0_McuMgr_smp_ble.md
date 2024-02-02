@@ -197,32 +197,32 @@
 20) Start the terminal program, e.g. __Serial Terminal__ from the _nRF Connect for Desktop_ tool.
 21) In case you have already downloaded the code, a reset on the development kit should be done now. In case you have not yet downloaded the __mcumgr_smp_bluetooth_original.hex__ file, you should download it on the connected development kit. After that you should see following outputs in the terminal.
 
-   [image](images/McuMgr_SMP_BLE_Terminal1.jpg)
+   ![image](images/McuMgr_SMP_BLE_Terminal1.jpg)
 
    You can see here that the MCUboot bootloader is executed first. Then the code execution of the application is started and we can see the expected output "Image: original SMP BLE image". Moreover, the Bluetooth advertising has started. 
 
 22) Let's start the __nRF Connect for Mobile__ app on your smartphone. Do a scan and look for the "DFU Example" device.
 
-    [image](images/McuMgr_SMP_BLE_AppScan.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppScan.jpg)
 
 23) Click the "Connect" button on the smartphone for the "DFU Example" device. You should now see that a Bluetooth connection is established and in the Serial Terminal the "Connected" message occurs.
 
-   [image](images/McuMgr_SMP_BLE_Terminal2.jpg)
+    ![image](images/McuMgr_SMP_BLE_Terminal2.jpg)
 
 24) Upload the __app_update.bin__ file (upgrade image) to the smartphone and in the DFU tab select the file and click the "Start" button.
 
-    [image](images/McuMgr_SMP_BLE_AppStart.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppStart.jpg)
 
-    [image](images/McuMgr_SMP_BLE_AppStart2.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppStart2.jpg)
     
 25) Then you should see on the smartphone app that the firmware is downloaded.
   
-    [image](images/McuMgr_SMP_BLE_AppDownload.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppDownload.jpg)
 
 26) You should see in the Serial Terminal that a reset happens and the MCUboot bootloader is executed again. The bootloader detects a valid image in the secondary image slot and does a permanent swap.  The new application is then executed, which can be identified via the line "Image: upgrade SMP BLE image".
 
-   [image](images/McuMgr_SMP_BLE_Terminal3.jpg)
+    ![image](images/McuMgr_SMP_BLE_Terminal3.jpg)
 
 27) The smartphone app shows after a while a successful firmware upgrade.
 
-    [image](images/McuMgr_SMP_BLE_AppSuccess.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppSuccess.jpg)
