@@ -16,7 +16,7 @@ It is of course also possible to create an upgrade image that uses the swap type
 
 ### Create new project
 
-1) Copy the MCUboot2 project (e.g. name of new project: "MCUboot2_confirm")
+1) Copy the [MCUboot2](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/01_MCUboot2) project (e.g. name of new project: "MCUboot2_confirm")
 
 2) add the following line to main function:
 
