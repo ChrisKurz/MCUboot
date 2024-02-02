@@ -23,3 +23,7 @@ In this subchapter we will focus on MCUboot. In these exercises, the firmware up
 
 ## McuMgr Hands-on
 In this subsection we will look at how to handle the download of the upgrade image with _McuMgr_. 
+
+### BLuetooth Le
+
+- [Adding SMP Server with Bluetooth Transfer to a Project](doc/NCSv2.5.0_McuMgr_smp_ble.md) - Here we add device firmware upgrade in an application and perform the upgrade image download via Bluetooth.
