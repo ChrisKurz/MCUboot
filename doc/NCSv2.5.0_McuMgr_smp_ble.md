@@ -106,22 +106,22 @@ Here we add Device Firmware Image download capability to an application and perf
 
 	<sup>_src/mcumgr_smp_bluetooth.c_</sup>
 
-       #include <zephyr/bluetooth/bluetooth.h>
+        #include <zephyr/bluetooth/bluetooth.h>
 
-       void start_mcumgr_smp_bluetooth(void)
-       {
-           int err;
+        void start_mcumgr_smp_bluetooth(void)
+        {
+            int err;
    
-           /* Initialize the Bluetooth Subsystem */
-           err = bt_enable(NULL);
+            /* Initialize the Bluetooth Subsystem */
+            err = bt_enable(NULL);
 
-           if (err != 0) {
-               printk("Bluetooth init failed (err %d)\n", err);
-               return;
-           }
-           printk("Bluetooth initialized\n");
-           start_advertising();
-       }
+            if (err != 0) {
+                printk("Bluetooth init failed (err %d)\n", err);
+                return;
+            }
+            printk("Bluetooth initialized\n");
+            start_advertising();
+        }
 
 12) Let's add the advertising.
 
