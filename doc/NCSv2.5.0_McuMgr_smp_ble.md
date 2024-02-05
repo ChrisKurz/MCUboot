@@ -100,7 +100,7 @@ Here we add Device Firmware Image download capability to an application and perf
 
 	<sup>_src/mcumgr_smp_bluetooth.h_</sup>
 
-       void start_mcumgr_smp_bluetooth(void);
+        void start_mcumgr_smp_bluetooth(void);
 
 11) The application code now has to enable the Bluetooth stack, start advertising, and handle connects and disconnects. Let's start to enable the Bluetooth stack.
 
