@@ -1,12 +1,14 @@
-<sup>SDK version: NCS v2.5.0 - Link to Hands-on solution: [MCUboot1](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/01_MCUboot1), [MCUboot2](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/01_MCUboot2)</sup>
+<sup>SDK version: NCS v2.5.0 - Link to Hands-on solution: [original image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_original), [upgrade image project](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.5.0/McuMgr_SMP_BLE_upgrade)</sup>
 
-# MCUboot Hands-on:  Adding MCUboot to a Project
+# McuMgr Hands-on:  Adding SMP Server with Bluetooth Transfer to a Project
 
 ## Introduction
 
+Here we add Device Firmware Image download capability to an application and perform a firmware upgrade via Bluetooth LE. 
 
 ## Required Hardware/Software for Hands-on
 - one nRF52 development kit (e.g. [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK))
+- a smartphone is needed with [nRF Connect for Mobile](https://www.nordicsemi.com/Products/Development-tools/nRF-Connect-for-mobile) app ([Android app](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=en&gl=US) or [iOS app](https://apps.apple.com/gb/app/nrf-connect-for-mobile/id1054362403))
 - install the _nRF Connect SDK_ v2.5.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/assistant.html#).
 
 ## Hands-on step-by-step description 
@@ -98,28 +100,28 @@
 
 	<sup>_src/mcumgr_smp_bluetooth.h_</sup>
 
-       void start_mcumgr_smp_bluetooth(void);
+        void start_mcumgr_smp_bluetooth(void);
 
 11) The application code now has to enable the Bluetooth stack, start advertising, and handle connects and disconnects. Let's start to enable the Bluetooth stack.
 
 	<sup>_src/mcumgr_smp_bluetooth.c_</sup>
 
-       #include <zephyr/bluetooth/bluetooth.h>
+        #include <zephyr/bluetooth/bluetooth.h>
 
-       void start_mcumgr_smp_bluetooth(void)
-       {
-           int err;
+        void start_mcumgr_smp_bluetooth(void)
+        {
+            int err;
    
-           /* Initialize the Bluetooth Subsystem */
-           err = bt_enable(NULL);
+            /* Initialize the Bluetooth Subsystem */
+            err = bt_enable(NULL);
 
-           if (err != 0) {
-               printk("Bluetooth init failed (err %d)\n", err);
-               return;
-           }
-           printk("Bluetooth initialized\n");
-           start_advertising();
-       }
+            if (err != 0) {
+                printk("Bluetooth init failed (err %d)\n", err);
+                return;
+            }
+            printk("Bluetooth initialized\n");
+            start_advertising();
+        }
 
 12) Let's add the advertising.
 
@@ -197,32 +199,32 @@
 20) Start the terminal program, e.g. __Serial Terminal__ from the _nRF Connect for Desktop_ tool.
 21) In case you have already downloaded the code, a reset on the development kit should be done now. In case you have not yet downloaded the __mcumgr_smp_bluetooth_original.hex__ file, you should download it on the connected development kit. After that you should see following outputs in the terminal.
 
-   [image](images/McuMgr_SMP_BLE_Terminal1.jpg)
+   ![image](images/McuMgr_SMP_BLE_Terminal1.jpg)
 
    You can see here that the MCUboot bootloader is executed first. Then the code execution of the application is started and we can see the expected output "Image: original SMP BLE image". Moreover, the Bluetooth advertising has started. 
 
 22) Let's start the __nRF Connect for Mobile__ app on your smartphone. Do a scan and look for the "DFU Example" device.
 
-    [image](images/McuMgr_SMP_BLE_AppScan.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppScan.jpg)
 
 23) Click the "Connect" button on the smartphone for the "DFU Example" device. You should now see that a Bluetooth connection is established and in the Serial Terminal the "Connected" message occurs.
 
-   [image](images/McuMgr_SMP_BLE_Terminal2.jpg)
+    ![image](images/McuMgr_SMP_BLE_Terminal2.jpg)
 
 24) Upload the __app_update.bin__ file (upgrade image) to the smartphone and in the DFU tab select the file and click the "Start" button.
 
-    [image](images/McuMgr_SMP_BLE_AppStart.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppStart.jpg)
 
-    [image](images/McuMgr_SMP_BLE_AppStart2.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppStart2.jpg)
     
 25) Then you should see on the smartphone app that the firmware is downloaded.
   
-    [image](images/McuMgr_SMP_BLE_AppDownload.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppDownload.jpg)
 
 26) You should see in the Serial Terminal that a reset happens and the MCUboot bootloader is executed again. The bootloader detects a valid image in the secondary image slot and does a permanent swap.  The new application is then executed, which can be identified via the line "Image: upgrade SMP BLE image".
 
-   [image](images/McuMgr_SMP_BLE_Terminal3.jpg)
+    ![image](images/McuMgr_SMP_BLE_Terminal3.jpg)
 
 27) The smartphone app shows after a while a successful firmware upgrade.
 
-    [image](images/McuMgr_SMP_BLE_AppSuccess.jpg)
+    ![image](images/McuMgr_SMP_BLE_AppSuccess.jpg)
