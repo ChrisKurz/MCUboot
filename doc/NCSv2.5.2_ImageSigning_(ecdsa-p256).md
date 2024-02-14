@@ -36,6 +36,8 @@ Let's generate an own key file and sign an application image.
 ### Generate the Key File
 1) Let's generate a key file. Open the _command prompt_ or _bash_ that are available in __Toolchain Manager__. 
 
+   ![missing image](images/MCUboot_Signature_bash_NCSv2.5.2.jpg)
+
 2) Create a folder where you will store your key files, e.g. C:/Nordic/keyfiles).
 3) Go to the new folder and then use __imgtool__ and generate the PEM file. 
           
@@ -82,17 +84,17 @@ Let's generate an own key file and sign an application image.
 8) Start a terminal program and connect to your development kit.
 9) Use the Programmer tool and add the images __merged.hex__ and __app_moved_test_update.hex__. Then click on "Erase & Write".
    
-   ![image](images/MCUboot_Signature_programmer.jpg)
+   ![missing image](images/MCUboot_Signature_programmer.jpg)
 
 10) You can see in the terminal that a test swap is done. The upgrade image is accepted and moved to slot-0. Then it is executed. Doing another reset will cause a revert and the old image is used again.
                   
-   ![image](images/MCUboot_Signature_terminal_NCSv2.5.2.jpg)
+   ![missing image](images/MCUboot_Signature_terminal_NCSv2.5.2.jpg)
 
 11) We have done a swap here. This means the previous image that was executed in primary slot (slot 0) was exchanged with the upgrade image and is now in secondary slot (slot 1). Press __Read__ button in Programmer app. 
 
 12) You can use the orignial [MCUboot2](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.3.0/01_MCUboot2) upgrade image __app_moved_test_update.hex__ and check if this one is accepted. Note that this one uses the default key! When it is executed it should output "Image: MCUboot2" on the terminal. 
                   
-   ![image](images/MCUboot_Signature_terminal2_NCSv2.5.2.jpg)
+   ![missing image](images/MCUboot_Signature_terminal2_NCSv2.5.2.jpg)
 
    __NOTE__: As you can see, the image that uses the default key is not accepted. The default key software would output "Image: MCUboot2" only in the terminal, and not "Image using user-defined signature". Instead, the old image with the correct signature is executed. 
    
