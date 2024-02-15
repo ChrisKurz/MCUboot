@@ -15,7 +15,7 @@ In this subchapter we will focus on MCUboot. In these exercises, the firmware up
 - [Create a signed Application Image](doc/NCSv2.5.2_ImageSigning_(ecdsa-p256).md) - using Signature Type _Elliptic curve digital signatures with curve P-256_
 
 ### Confirming an upgrade image
-- [Create a confirmed upgrade image](doc/NCSv2.3.0_01a-SwapTypePermanent.md)
+- [Create a confirmed upgrade image](doc/NCSv2.5.2_01a-SwapTypePermanent.md)
 
 ### Downgrade Prevention
 - [Using Software-based Downgrade Prevention](doc/NCSv2.3.0_DowngradePrevention.1.md) - This method works only in image upgrade mode _Overwrite image updates instead of swapping_!
