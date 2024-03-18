@@ -52,7 +52,7 @@ Enter following line:
 
     imgtool keygen -k My_Key.pem -t ecdsa-p256
 
-![missing image](images/imgtool_CreatePemFile.jpg)
+![missing image](images/imgtool_CreatePemFile2.jpg)
 
 The file _My_Key.pem_ is created and it looks like this:
 
