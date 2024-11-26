@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.5.2</sup>
+<sup>SDK version: NCS v2.8.0</sup>
 
 # Generate a Key File
 
@@ -10,7 +10,7 @@ In this hands-on we will look at the creation of a key file required for these p
 
 
 ## Required Software
-- install the _nRF Connect SDK_ v2.5.2 and _Visual Studio Code_. The installation process is described [here](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/lessons/lesson-1-nrf-connect-sdk-introduction/topic/exercise-1-1/).
+- install the _nRF Connect SDK_ v2.8.0 and _Visual Studio Code_. The installation process is described [here](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/lessons/lesson-1-nrf-connect-sdk-introduction/topic/exercise-1-1/).
 
 
 ## Hands-on step-by-step description 
