@@ -20,7 +20,7 @@ First, we generate a PEM file that contains a private/public key pair. The devel
 
 Note that the environmental variables on the computer has to be set to allow using __imgtool__. In case you start the command line shell in Visual Studio Code all these environmental variables are set. So the easiest way is to open the terminal in Visual Studio Code by clicking on the three dots in the build line and then click on _Start New Terminal Here_. 
 
-![missing image](images/GenKey_NewTerminal.jpg)
+![missing image](images/GenKey_NewTerminal_NCSv2.8.0.jpg)
 
 
 ## Generating a PEM file...
