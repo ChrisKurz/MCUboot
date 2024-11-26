@@ -22,7 +22,11 @@ So, first we will take a look on how to add MCUboot to an own project.
    The Build Configuration should look like this:
 
    ![missing image](images/HO1-buildConf_mcuboot1_NCSv2.8.0.jpg)
-   
+
+  It is important to select "Use sysbuild" for the System build! 
+  
+  > **NOTE**: The _nRF Connect SDK_ versions up to version v2.6.2 used a multi-image build of the _Child and Parent images_, which is set to [deprecated in _nRF Connect SDK_ version 2.7.0](https://docs.nordicsemi.com/bundle/ncs-2.7.0/page/nrf/config_and_build/multi_image.html). It is replaced by the Zephyr's _Sysbuild_. In this hands-on we will use _Sysbuild_.
+
 
 2) Add the following line to main function:
 
@@ -33,8 +37,6 @@ So, first we will take a look on how to add MCUboot to an own project.
    __Note:__ In previous hands-on we used the function __printk()__, which is included in the Zephyr kernel. In the Zephyr hello_world example the [PICOLIB](https://docs.nordicsemi.com/bundle/ncs-2.8.0/page/zephyr/develop/languages/c/picolibc.html) library is included. This library supports all standard C formatted input and output functions, like _printf()_. This is also the reason why _#include <stdio.h>_ is used in the code example.
 
 3) Now we want to add MCUboot to our project.
-  
-   > **NOTE**: The _nRF Connect SDK_ versions up to version v2.6.2 used a multi-image build of the _Child and Parent images_, which is set to [deprecated in _nRF Connect SDK_ version 2.7.0](https://docs.nordicsemi.com/bundle/ncs-2.7.0/page/nrf/config_and_build/multi_image.html). It is replaces by the Zephyr's _Sysbuild_. In this hands-on we will use _Sysbuild_.
 
    _Sysbuild_ allows us to handle two independent projects within a single project build. So it is basically doing a multi-image build. The images are:
     - our own application image. In this hands-on it is the hello world project that also prints "Image: MCUboot1" and
@@ -42,7 +44,7 @@ So, first we will take a look on how to add MCUboot to an own project.
 
    We will use a _Sysbuild_ KConfig file for doing all the needed sysbuild configurations. Add the file __sysbuild.conf__ to your project folder (this is the folder where the CMakeLists.txt file is located). The file structure of your project should look like this:
 
-    <Workspace folder>/MCUboot1<br>
+    _Workspace folder_/01_MCUboot1<br>
     |--- src<br>
     |------ main.c<br>
     |--- CMakeLists.txt<br>

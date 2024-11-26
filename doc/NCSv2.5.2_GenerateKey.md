@@ -18,9 +18,9 @@ In this hands-on we will look at the creation of a key file required for these p
 ### Generate the key file
 First, we generate a PEM file that contains a private/public key pair. The developers of MCUBoot provide a tool for image signing, image encryption, and key management. This tool is called __imgtool__. The __imgtool__ is included in the MCUBoot repository. This means that when you install the _nRF Connect SDK_, you also install MCUBoot and the __imgtool__ included in it. Note that __imgtool__ is a command line tool, which is executed in a command shell.
 
-Note that the environmental variables on the computer has to be set to allow using __imgtool__. The easiest way is to open the terminal in Visual Studio Code by clicking on the three dots in the build line and then click on _Start New Terminal Here_. 
+Note that the environmental variables on the computer has to be set to allow using __imgtool__. In case you start the command line shell in Visual Studio Code all these environmental variables are set. So the easiest way is to open the terminal in Visual Studio Code by clicking on the three dots in the build line and then click on _Start New Terminal Here_. 
 
-![missing image](images/GenKey_NewTerminal.jpg)
+![missing image](images/GenKey_NewTerminal_NCSv2.8.0.jpg)
 
 
 ## Generating a PEM file...
