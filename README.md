@@ -10,7 +10,7 @@ Note that MCUboot does not handle the upgrade image download. This has to be han
 In this subchapter we will focus on MCUboot. In these exercises, the firmware upgrade image is loaded via the Programmer tool. This helps to keep the project simple and we can focus only on using the MCUboot features. 
 
 ### Basics
-- [Adding MCUboot to a project](doc/NCSv2.5.2_01-AddingMcubootToProject.md)
+- [Adding MCUboot to a project](doc/NCSv2.8.0_01-AddingMcubootToProject.md) - This chapter shows how to add MCUboot to your own application project and do a multi-image build. So you get a merged image that contains your application image and the mcuboot image.
 - [Generate a Key File](doc/NCSv2.5.2_GenerateKey.md) - A key file is needed when you want to generate your own signature key for an application image, or you would like to encrypt your upgrade image. This exercise describes how to generate a key file.
 - [Create a signed Application Image](doc/NCSv2.5.2_ImageSigning_(ecdsa-p256).md) - using Signature Type _Elliptic curve digital signatures with curve P-256_
 
