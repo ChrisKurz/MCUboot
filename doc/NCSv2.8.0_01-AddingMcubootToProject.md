@@ -25,7 +25,7 @@ So, first we will take a look on how to add MCUboot to an own project.
 
   It is important to select "Use sysbuild" for the System build! 
   
-  > **NOTE**: The _nRF Connect SDK_ versions up to version v2.6.2 used a multi-image build of the _Child and Parent images_, which is set to [deprecated in _nRF Connect SDK_ version 2.7.0](https://docs.nordicsemi.com/bundle/ncs-2.7.0/page/nrf/config_and_build/multi_image.html). It is replaces by the Zephyr's _Sysbuild_. In this hands-on we will use _Sysbuild_.
+  > **NOTE**: The _nRF Connect SDK_ versions up to version v2.6.2 used a multi-image build of the _Child and Parent images_, which is set to [deprecated in _nRF Connect SDK_ version 2.7.0](https://docs.nordicsemi.com/bundle/ncs-2.7.0/page/nrf/config_and_build/multi_image.html). It is replaced by the Zephyr's _Sysbuild_. In this hands-on we will use _Sysbuild_.
 
 
 2) Add the following line to main function:
