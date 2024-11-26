@@ -1,17 +1,12 @@
 # MCUboot
 
 This repository contains hands-on descriptions that show step-by-step how to integrate MCUboot into a custom project. 
-Each individual hands-on focuses on specific features. 
 
 Note that MCUboot does not handle the upgrade image download. This has to be handled in the application software. The Zephyr's _Device Managment_ includes _McuMgr_ support that helps with upgrade image download. 
 
-
-## MCUboot Hands-on
-In this subchapter we will focus on MCUboot. In these exercises, the firmware upgrade image is loaded via the Programmer tool. This helps to keep the project simple and we can focus only on using the MCUboot features. 
-
-### Basics
-- [Adding MCUboot to a project](doc/NCSv2.8.0_01-AddingMcubootToProject.md) - This chapter shows how to add MCUboot to your own application project and do a multi-image build. So you get a merged image that contains your application image and the mcuboot image.
-- [Generate a Key File](doc/NCSv2.5.2_GenerateKey.md) - A key file is needed when you want to generate your own signature key for an application image, or you would like to encrypt your upgrade image. This exercise describes how to generate a key file.
+### Basics - Adding MCUboot, degining an own signature, and add first simple DFU
+1. [Adding MCUboot to a project](doc/NCSv2.8.0_01-AddingMcubootToProject.md) - This chapter explains how to add MCUboot to your own application project and do a multi-image build. So you get a merged image that contains your application image and the mcuboot image.
+2. [Generate a Key File](doc/NCSv2.8.0_02_GenerateKey.md) - A key file is needed when you want to generate your own signature key for an application image, or you would like to encrypt your upgrade image. This exercise describes how to generate a key file.
 - [Create a signed Application Image](doc/NCSv2.5.2_ImageSigning_(ecdsa-p256).md) - using Signature Type _Elliptic curve digital signatures with curve P-256_
 
 ### Confirming an upgrade image
