@@ -44,7 +44,7 @@ So, first we will take a look on how to add MCUboot to an own project.
 
    We will use a _Sysbuild_ KConfig file for doing all the needed sysbuild configurations. Add the file __sysbuild.conf__ to your project folder (this is the folder where the CMakeLists.txt file is located). The file structure of your project should look like this:
 
-    <Workspace folder>/01_MCUboot1<br>
+    _Workspace folder_/01_MCUboot1<br>
     |--- src<br>
     |------ main.c<br>
     |--- CMakeLists.txt<br>
