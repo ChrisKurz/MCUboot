@@ -60,7 +60,7 @@
        CONFIG_UART_CONSOLE=y
  
 
-6) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
+7) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -68,7 +68,7 @@
 
 ### DeviceTree settings for MCUboot
 
-7) Let's add an mcuboot.overlay file.
+8) Let's add an mcuboot.overlay file.
    
     _Workspace folder_/01_MCUboot1<br>
     |--- src<br>
@@ -80,7 +80,7 @@
     |--- |--- mcuboot.conf<br>
     |--- |--- mcuboot.overlay   
 
-8) Define the button and LED that will be used. 
+9) Define the button and LED that will be used. 
 
 	<sup>_sysbuild/mcuboot.overlay_</sup>
 
