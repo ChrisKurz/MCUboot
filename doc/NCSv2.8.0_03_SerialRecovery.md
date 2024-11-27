@@ -53,7 +53,7 @@
        CONFIG_MCUBOOT_SERIAL=y
        CONFIG_BOOT_SERIAL_UART=y
 
-6) Zephyr UART console must be disable if Serial Recovery mode is used.
+6) Zephyr UART console must be disabled if Serial Recovery mode is used.
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -92,6 +92,10 @@
          };
    
 
+## Testing
+
+10) Build and flash the project to your board.
+11) Hold __button 2__ while resetting the development kit. The kit will now enter Serial Recovery mode. LED2 is indicating this mode. 
 
 
 
