@@ -57,7 +57,7 @@
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
-       CONFIG_UART_CONSOLE=y
+       CONFIG_UART_CONSOLE=n
  
 
 7) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
