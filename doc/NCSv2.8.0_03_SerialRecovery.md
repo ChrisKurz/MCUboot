@@ -11,7 +11,7 @@
 
 ## Hands-on step-by-step description 
 
-### Prepare the application code 
+### Use previous project as starting point
 
 1) Let's make a copy of the previously used [01_mcuboot1](MCUboot1](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.8.0/01_MCUboot1) project. Name this project _03_SerialRecovery_.
   
@@ -22,4 +22,78 @@
 	<sup>_src/main.c_ => main() function</sup>
 
            printf("Image: Serial Recovery, version 1\n");
+
+
+### Configuration of MCUboot project
+
+3) We want to put the configuration of the MCUboot project in our own project folder. This is supported by creating a __sysbuild__ folder and placing a __mcuboot.conf__ file into it. Your project folder should then look like this:
+
+    _Workspace folder_/01_MCUboot1<br>
+    |--- src<br>
+    |--- |--- main.c<br>
+    |--- CMakeLists.txt<br>
+    |--- prj.conf<br>
+    |--- sysbuild.conf<br>
+    |--- sysbuild<br>
+    |--- |--- mcuboot.conf
+
+4) Let's enable logging for MCUboot.
+   
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+       CONFIG_LOG=y
+       CONFIG_MCUBOOT_LOG_LEVEL_INF=y
+
+### Add Serial Recovery mode in MCUboot
+
+5) Enable Serial Recovery by following KCONFIG setting in sysbzild/mcuboot.conf file.
+
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+       CONFIG_MCUBOOT_SERIAL=y
+       CONFIG_BOOT_SERIAL_UART=y
+
+
+6) Disable UART from the console from MCUboot:
+
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+       CONFIG_UART_CONSOLE=n
+
+7) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
+
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+       CONFIG_MCUBOOT_INDICATION_LED=y
+
+### DeviceTree settings for MCUboot
+
+8) Let's add an mcuboot.overlay file.
+   
+    _Workspace folder_/01_MCUboot1<br>
+    |--- src<br>
+    |--- |--- main.c<br>
+    |--- CMakeLists.txt<br>
+    |--- prj.conf<br>
+    |--- sysbuild.conf<br>
+    |--- sysbuild<br>
+    |--- |--- mcuboot.conf<br>
+    |--- |--- mcuboot.overlay   
+
+9) Define the button and LED that will be used. 
+
+	<sup>_sysbuild/mcuboot.overlay_</sup>
+
+       / {
+         aliases {
+                 mcuboot-button0 = &button1;
+                 mcuboot-led0 = &led1;
+                 };
+         };
+   
+
+
+
+
+
 
