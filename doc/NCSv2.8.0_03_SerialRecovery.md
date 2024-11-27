@@ -37,7 +37,7 @@
     |--- sysbuild<br>
     |--- |--- mcuboot.conf
 
-4) Let's enable logging for MCUboot.
+4) This step can be skipped, because the logging within MCUboot is activated by default. In case a custom board definition was used for your project. you should ensure that MCUboot logging is enabled. 
    
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -53,14 +53,7 @@
        CONFIG_MCUBOOT_SERIAL=y
        CONFIG_BOOT_SERIAL_UART=y
 
-
-6) Disable UART from the console from MCUboot:
-
-	<sup>_sysbuild/mcuboot.conf_</sup>
-
-       CONFIG_UART_CONSOLE=n
-
-7) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
+6) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -68,7 +61,7 @@
 
 ### DeviceTree settings for MCUboot
 
-8) Let's add an mcuboot.overlay file.
+7) Let's add an mcuboot.overlay file.
    
     _Workspace folder_/01_MCUboot1<br>
     |--- src<br>
@@ -80,7 +73,7 @@
     |--- |--- mcuboot.conf<br>
     |--- |--- mcuboot.overlay   
 
-9) Define the button and LED that will be used. 
+8) Define the button and LED that will be used. 
 
 	<sup>_sysbuild/mcuboot.overlay_</sup>
 
