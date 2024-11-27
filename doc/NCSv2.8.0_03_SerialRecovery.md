@@ -53,6 +53,13 @@
        CONFIG_MCUBOOT_SERIAL=y
        CONFIG_BOOT_SERIAL_UART=y
 
+6) Zephyr UART console must be disable if Serial Recovery mode is used.
+
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+       CONFIG_UART_CONSOLE=y
+ 
+
 6) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
