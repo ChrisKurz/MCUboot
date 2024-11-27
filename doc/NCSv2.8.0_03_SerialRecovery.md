@@ -11,7 +11,9 @@
 
 ## Hands-on step-by-step description 
 
-### Use previous project as starting point
+### Enable Serial Recovery in MCUboot
+
+#### Use previous project as starting point
 
 1) Let's make a copy of the previously used [01_mcuboot1](MCUboot1](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.8.0/01_MCUboot1) project. Name this project _03_SerialRecovery_.
   
@@ -24,7 +26,7 @@
            printf("Image: Serial Recovery, version 1\n");
 
 
-### Configuration of MCUboot project
+#### Configuration of MCUboot project
 
 3) We want to put the configuration of the MCUboot project in our own project folder. This is supported by creating a __sysbuild__ folder and placing a __mcuboot.conf__ file into it. Your project folder should then look like this:
 
@@ -44,7 +46,7 @@
        CONFIG_LOG=y
        CONFIG_MCUBOOT_LOG_LEVEL_INF=y
 
-### Add Serial Recovery mode in MCUboot
+#### Add Serial Recovery mode in MCUboot
 
 5) Enable Serial Recovery by following KCONFIG setting in sysbzild/mcuboot.conf file.
 
@@ -66,7 +68,7 @@
 
        CONFIG_MCUBOOT_INDICATION_LED=y
 
-### DeviceTree settings for MCUboot
+#### DeviceTree settings for MCUboot
 
 8) Let's add an mcuboot.overlay file.
    
@@ -92,12 +94,44 @@
          };
    
 
-## Testing
+### Testing
 
 10) Build and flash the project to your board.
 11) Hold __button 2__ while resetting the development kit. The kit will now enter Serial Recovery mode. LED2 is indicating this mode. 
 
 
+### Add DFU over UART to the application
 
+12) Add MCUMGR software module by adding following lines to our prj.conf file.
+
+	<sup>_sysbuild/mcuboot.conf_</sup>
+
+        # Enable MCUMGR
+        CONFIG_MCUMGR=y
+
+        # Enable MCUMRG management for both OS and Images
+        CONFIG_MCUMGR_GRP_OS=y
+        CONFIG_MCUMGR_GRP_IMG=y
+
+        # Configure MCUMGR transport to UART
+        CONFIG_MCUMGR_TRANSPORT_UART=y
+
+        # Dependencies:
+        # Configure dependencies for CONFIG_MCUMGR
+        CONFIG_NET_BUF=y
+        CONFIG_ZCBOR=y
+        CONFIG_CRC=y
+
+        # Configure dependencies for CONFIG_MCUMGR_GRP_IMG
+        CONFIG_FLASH=y
+        CONFIG_IMG_MANAGER=y
+
+        # Configure dependencies for CONFIG_IMG_MANAGER
+        CONFIG_STREAM_FLASH=y
+        CONFIG_FLASH_MAP=y
+    
+        # Configure dependencies for CONFIG_MCUMGR_TRANSPORT_UART
+        CONFIG_BASE64=y
+    
 
 
