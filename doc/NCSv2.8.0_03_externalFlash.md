@@ -64,3 +64,24 @@ MCUboot uses a dual-slot solution for upgrading a fimrware. slot 0 is used to ex
 
        CONFIG_BOOT_MAX_IMG_SECTORS=256
 
+## Testing
+
+7) We need a new application image for testing. Let's change the instruction __printf("Image: Ext Flash, version 1\n");__ in main.c to:
+
+        printf("Image: Ext Flash, version 2\n");
+
+8) Before we upload the new image, check the output in the terminal. You should see that "Image: Ext Flash, version 1" is output in the Serial Terminal.
+
+9) Get the dev kit into Bootloader mode. Press Button 2 and keep it holding, while you press for a short time the RESET button. The LED2 should be on after that, indicating that the board is in bootloader mode. 
+
+18) Let's download the binary file to our hardware:
+
+        mcumgr -c testDK image upload build/04_ExtFlash/zephyr/zephyr.signed.bin
+
+    You should then see a progress bar and a statement about how much of the code was already downloaded. The code download is complete as soon as "Done" is shown.
+
+19) Reset the dev kit by either pressing the RESET button on the DK or by executing following instruction:
+
+        mcumgr -c testDK reset
+
+20) You should now see that the output string has changed to "Image: Ext Flash, version 2". So MCUboot has copied the image we stored in slot 1 into slot 0, where it is now executed.
