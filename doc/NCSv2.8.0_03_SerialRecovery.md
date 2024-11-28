@@ -100,7 +100,7 @@
 11) Hold __button 2__ while resetting the development kit. The kit will now enter Serial Recovery mode. LED2 is indicating this mode. 
 
 
-### Add DFU over UART to the application
+### Add DFU over UART to the application by using MCUMGR
 
 12) Add MCUMGR software module by adding following lines to our prj.conf file.
 
@@ -132,6 +132,47 @@
     
         # Configure dependencies for CONFIG_MCUMGR_TRANSPORT_UART
         CONFIG_BASE64=y
+
+### Install MCUMGR on computer to allow image upload dev kit
+
+13) The MCUMGR requires as dedicated software on the computer to handle image download. Such a dedicated software is for example the [mcumgr-cli](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/services/device_mgmt/mcumgr.html#command-line-tool). You can install this with the following command line instruction, e.g. executed in Window's cmd.exe.
+
+        go install github.com/apache/mynewt-mcumgr-cli/mcumgr@latest
+
+> **NOTE**: You might have to install __Go__ to install __mcumgr-cli__. See [https://go.dev/doc/install](https://go.dev/doc/install) for how to install Go.
+
+14) A test whether mcumgr is installed can be done as follows:
+
+        mcumgr version
     
+### Testing
 
+14) We need a new application image for testing. Let's change the instruction __printf("Image: Serial Recovery, version 1\n");__ in main.c to:
 
+        printf("Image: Serial Recovery, version 2\n");
+
+   Build the project. You should find the binary file _zepyhr.signed.bin_ in the _build/03_SerialRecovery/zephyr_ folder.
+
+   ![missing image](images/H03-build-folder-NCSv2.8.0.jpg)
+
+   This is the signed binary file that uses the default signing key, which was also used in MCUboot project (because we have not changed the default signature settings in KCONFIG). So this file is the one we would like to download to our hardware.
+
+15) Before we upload the new image, check the output in the terminal. You should see that "Image: Serial Recovery, version 1" is output in the Serial Terminal.
+
+16) We have to add a configuration to mcumgr-cli tool, before we can use it. The configuration defines the UART settings.
+
+        mcumgr conn add testDK type="serial" connstring="COM5,baud=115200,mtu=512"
+
+   > **NOTE**: You should select the correct COM port, which is used on your computer for communication with the dev kit. A simple way to find out the COM port is using Serial Port and the used COM ports.
+
+17) Let's download the binary file to our hardware:
+
+        mcumgr -c testDK image upload build/03_SerialRecovery/zephyr/zephyr.signed.bin
+
+    You should then see a progress bar and a statement about how much of the code was already downloaded. The code download is complete as soon as "Done" is shown.
+
+18) Reset the dev kit by either pressing the RESET button on the DK or by executing following instruction:
+
+        mcumgr -c testDK reset
+
+19) You should now see that the output string has changed to "Image: Serial Recovery, version 2". So MCUboot has copied the image we stored in slot 1 into slot 0, where it is now executed.
