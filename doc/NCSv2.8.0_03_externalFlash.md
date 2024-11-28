@@ -80,6 +80,8 @@ MCUboot uses a dual-slot solution for upgrading a fimrware. slot 0 is used to ex
 
     You should then see a progress bar and a statement about how much of the code was already downloaded. The code download is complete as soon as "Done" is shown.
 
+   > **NOTE**: In case the COM port is already open in another computer application, then you get the error "Error: Access is denied.". Close the COM port in the other computer application and try again.
+
 19) Reset the dev kit by either pressing the RESET button on the DK or by executing following instruction:
 
         mcumgr -c testDK reset
