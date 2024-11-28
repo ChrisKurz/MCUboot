@@ -35,7 +35,7 @@ MCUboot uses a dual-slot solution for upgrading a fimrware. slot 0 is used to ex
     |--- CMakeLists.txt<br>
     |--- prj.conf<br>
     |--- sysbuild.conf<br>
-    |--- **nrf52840DK_nrf52840.overlay**
+    |--- **nrf52840DK_nrf52840.overlay**<br>
     |--- sysbuild<br>
     |--- |--- mcuboot.conf<br>
     |--- |--- **mcuboot.overlay** 
