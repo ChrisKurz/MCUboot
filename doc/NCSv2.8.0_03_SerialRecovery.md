@@ -165,14 +165,16 @@
 
    > **NOTE**: You should select the correct COM port, which is used on your computer for communication with the dev kit. A simple way to find out the COM port is using Serial Port and the used COM ports.
 
-17) Let's download the binary file to our hardware:
+17) Get the dev kit into Bootloader mode. Press Button 2 and keep it holding, while you press for a short time the RESET button. The LED2 should be on after that, indicating that the board is in bootloader mode. 
+
+18) Let's download the binary file to our hardware:
 
         mcumgr -c testDK image upload build/03_SerialRecovery/zephyr/zephyr.signed.bin
 
     You should then see a progress bar and a statement about how much of the code was already downloaded. The code download is complete as soon as "Done" is shown.
 
-18) Reset the dev kit by either pressing the RESET button on the DK or by executing following instruction:
+19) Reset the dev kit by either pressing the RESET button on the DK or by executing following instruction:
 
         mcumgr -c testDK reset
 
-19) You should now see that the output string has changed to "Image: Serial Recovery, version 2". So MCUboot has copied the image we stored in slot 1 into slot 0, where it is now executed.
+20) You should now see that the output string has changed to "Image: Serial Recovery, version 2". So MCUboot has copied the image we stored in slot 1 into slot 0, where it is now executed.
