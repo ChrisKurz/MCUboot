@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.8.0 - Link to Hands-on solution: [MCUboot1](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.8.0/03_SerialRecovery)</sup>
+<sup>SDK version: NCS v2.8.0 - Link to Hands-on solution: [03_SerialRecovery](https://github.com/ChrisKurz/MCUboot/tree/main/Workspace/NCSv2.8.0/03_SerialRecovery)</sup>
 
 # MCUboot Hands-on:  Adding Serial Recovery to the Project
 
