@@ -48,7 +48,7 @@
 
 #### Add Serial Recovery mode in MCUboot
 
-5) Enable Serial Recovery by following KCONFIG setting in sysbzild/mcuboot.conf file.
+5) Enable Serial Recovery by following KCONFIG setting in sysbuild/mcuboot.conf file.
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -56,15 +56,17 @@
        CONFIG_BOOT_SERIAL_UART=y
        CONFIG_SINGLE_APPLICATION_SLOT=y
 
+>__Note__: MCUboot's default setting is to use swap mode. This means that one slot is used for executing the application and a second slot is used to for storing the upgrade image. Since the serial recovery is not using a two-slot approache, we can configur MCUboot to work only with a single slot. (see CONFIG_SINGLE_APPLICATION_SLOT) 
 
-6) Zephyr UART console must be disabled if Serial Recovery mode is used.
+
+7) Zephyr UART console must be disabled if Serial Recovery mode is used.
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
        CONFIG_UART_CONSOLE=n
  
 
-7) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
+8) MCUboot allows to indicate that MCUboot is in Serial Recovery mode via an LED. This feature can be enabled by setting following KCONFIG:
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
