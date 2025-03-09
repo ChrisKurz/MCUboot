@@ -21,16 +21,15 @@
 
 2) Rename the image title in the prinf() instruction:
 
-	<sup>_src/main.c_ => main() function</sup>
+	<sup>_sysbuild.conf_</sup>
 
            printf("Image: Serial Recovery, version 1\n");
 
+### Enable and configure MCUboot ###
 
-#### Configuration of MCUboot project
+3) We have to use the __sysbuild.conf__ file for enabling MCUboot. Beside that we want to put the configuration of the MCUboot project in our own project folder. This is supported by creating a __sysbuild__ folder and placing a __mcuboot.conf__ file into it. Your project folder should then look like this:
 
-3) We want to put the configuration of the MCUboot project in our own project folder. This is supported by creating a __sysbuild__ folder and placing a __mcuboot.conf__ file into it. Your project folder should then look like this:
-
-    _Workspace folder_/01_MCUboot1<br>
+    _Workspace folder_/03_SerialRecovery<br>
     |--- src<br>
     |--- |--- main.c<br>
     |--- CMakeLists.txt<br>
@@ -39,7 +38,25 @@
     |--- sysbuild<br>
     |--- |--- mcuboot.conf
 
-4) This step can be skipped, because the logging within MCUboot is activated by default. In case a custom board definition was used for your project. you should ensure that MCUboot logging is enabled. 
+#### Enable MCUboot ####
+
+4) MCUboot is added to the project by adding the file sysbuild.conf to the project folder (this is the folder where CMakeLists.txt file is located). Add following lines to the sysbuild.conf file:
+
+	<sup>_sysbuild.conf_</sup>
+
+       # Enable MCUboot
+       SB_CONFIG_BOOTLOADER_MCUBOOT=y 
+
+5) MCUboot's default setting is to use swap mode. This means that one slot is used for executing the application and a second slot is used to for storing the upgrade image. Since the serial recovery is not using a two-slot approache, we can configure MCUboot to work only with a single slot.
+
+	<sup>_sysbuild.conf_</sup>
+
+       # Configure bootloader to use only one slot
+       SB_CONFIG_MCUBOOT_MODE_SINGLE_APP=y 
+
+#### Enable MCUboot Logging ####
+
+6) This step can be skipped, because the logging within MCUboot is activated by default. In case a custom board definition was used for your project. you should ensure that MCUboot logging is enabled. 
    
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
@@ -48,16 +65,12 @@
 
 #### Add Serial Recovery mode in MCUboot
 
-5) Enable Serial Recovery by following KCONFIG setting in sysbuild/mcuboot.conf file.
+6) Enable Serial Recovery by following KCONFIG setting in sysbuild/mcuboot.conf file.
 
 	<sup>_sysbuild/mcuboot.conf_</sup>
 
        CONFIG_MCUBOOT_SERIAL=y
        CONFIG_BOOT_SERIAL_UART=y
-       CONFIG_SINGLE_APPLICATION_SLOT=y
-
->__Note__: MCUboot's default setting is to use swap mode. This means that one slot is used for executing the application and a second slot is used to for storing the upgrade image. Since the serial recovery is not using a two-slot approache, we can configur MCUboot to work only with a single slot. (see CONFIG_SINGLE_APPLICATION_SLOT) 
-
 
 7) Zephyr UART console must be disabled if Serial Recovery mode is used.
 
@@ -76,7 +89,7 @@
 
 8) Let's add an mcuboot.overlay file.
    
-    _Workspace folder_/01_MCUboot1<br>
+    _Workspace folder_/03_SerialRecovery<br>
     |--- src<br>
     |--- |--- main.c<br>
     |--- CMakeLists.txt<br>
