@@ -5,7 +5,7 @@ This repository contains hands-on descriptions that show step-by-step how to int
 Note that MCUboot does not handle the upgrade image download. This has to be handled in the application software. The Zephyr's _Device Managment_ includes _McuMgr_ support that helps with upgrade image download. 
 
 ### Basics - Adding MCUboot, degining an own signature, and add first simple DFU
-1. [Adding MCUboot to a project](doc/NCSv2.8.0_01-AddingMcubootToProject.md) - This chapter explains how to add MCUboot to your own application project and do a multi-image build. So you get a merged image that contains your application image and the mcuboot image.
+1. [Adding MCUboot to a project](doc/NCSv2.9.0_AddingMcubootToProject.md) - This chapter explains how to add MCUboot to your own application project and do a multi-image build. So you get a merged image that contains your application image and the mcuboot image.
 2. [Generate a Key File](doc/NCSv2.8.0_02_GenerateKey.md) - A key file is needed when you want to generate your own signature key for an application image, or you would like to encrypt your upgrade image. This exercise describes how to generate a key file.
 3. [Add Serial Recovery to the project](doc/NCSv2.8.0_03_SerialRecovery.md) - MCUboot itself supports firmware update via UART interface. So the application firmware does not need to handle firmware download in this case. 
 
