@@ -46,7 +46,7 @@ So, first we will take a look on how to add MCUboot to an own project.
 
     _Workspace folder_/01_MCUboot1<br>
     |--- src<br>
-    |------ main.c<br>
+    |--- |--- main.c<br>
     |--- CMakeLists.txt<br>
     |--- prj.conf<br>
     |--- **sysbuild.conf**
